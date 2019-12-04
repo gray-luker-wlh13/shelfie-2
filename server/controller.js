@@ -23,8 +23,8 @@ module.exports = {
 
     delete: (req, res) => {
         const db = req.app.get('db');
-        const {product_id} = req.params;
-        db.delete_product(product_id).then(() => {
+        const {id} = req.params;
+        db.delete_product(id).then(() => {
             res.sendStatus(200);
         }).catch(err => {
             res.status(500).send({errorMessage: `Can't add product`})
