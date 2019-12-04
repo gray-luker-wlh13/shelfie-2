@@ -23,6 +23,7 @@ class Dashboard extends Component {
                     img={e.img}
                     deleteFn={this.deleteProduct}
                     id={e.product_id}
+                    i={e.i}
                 />
             )
         })

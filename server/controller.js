@@ -30,5 +30,17 @@ module.exports = {
             res.status(500).send({errorMessage: `Can't add product`})
             console.log(err)
         })
+    },
+
+    edit: (req, res) => {
+        const db = req.app.get('db');
+        const {id} = req.params;
+        const {product_name, price, img} = req.body;
+        db.edit_product([product_name, price, img, id]).then(() => {
+            res.sendStatus(200)
+        }).catch(err => {
+            res.status(500).send({errorMessage: `Can't add product`})
+            console.log(err)
+        })
     }
 }

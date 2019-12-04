@@ -5,7 +5,7 @@ class Product extends Component {
         const {img, name, price, id} = this.props
         return(
             <div className='product'>
-                <img src={img} alt='' height='200px'/>
+                <img src={img} alt='' height='200px' width='200px'/>
                 <div className='info'>
                     <h2>{name}</h2>
                     <h3>${price}</h3>

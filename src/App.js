@@ -10,7 +10,8 @@ class App extends Component {
     super();
 
     this.state = {
-      inventory: []
+      inventory: [],
+      i: 0
     }
   }
 
@@ -36,7 +37,7 @@ class App extends Component {
           inventory={this.state.inventory}
           getFn={this.getInventory}
         />
-        <Form getFn={this.getInventory}/>
+        <Form getFn={this.getInventory} i={this.state.i}/>
         </div>
       </div>
     );

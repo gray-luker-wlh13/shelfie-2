@@ -10,6 +10,7 @@ const {SERVER_PORT, CONNECTION_STRING} = process.env
 app.get('/api/inventory', ctrl.getInventory);
 app.delete('/api/inventory/:id', ctrl.delete);
 app.post('/api/product', ctrl.createProduct);
+app.put('/api/inventory/:id', ctrl.edit);
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
