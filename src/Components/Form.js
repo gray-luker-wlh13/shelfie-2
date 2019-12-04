@@ -42,11 +42,15 @@ class Form extends Component {
 
     createProduct = (body) => {
         axios.post('/api/product', body).then(res => {
-
+            return (
+                this.props.getFn(res.data)
+                // this.handleCancel()
+            )
         })
     }
 
     render(){
+        const {product_name, price, img} = this.state
         return(
             <div className='form'> 
                <div className='input-container'>
@@ -56,7 +60,7 @@ class Form extends Component {
                </div>
                <div className='button-container'>
                    <button>Cancel</button>
-                   <button>Add to Inventory</button>
+                   <button onClick={() => this.createProduct({product_name, price, img})}>Add to Inventory</button>
                </div>
             </div>
         )
