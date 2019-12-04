@@ -15,7 +15,9 @@ class Form extends Component {
 
     render(){
         return(
-            <div>Form Component</div>
+            <div className='form'> 
+                Form
+            </div>
         )
     }
 }
