@@ -5,9 +5,15 @@ class Product extends Component {
         const {img, name, price} = this.props
         return(
             <div className='product'>
-                <img src={img} alt=''/>
-                <h2>{name}</h2>
-                <h3>${price}</h3>
+                <img src={img} alt='' height='200px'/>
+                <div className='info'>
+                    <h2>{name}</h2>
+                    <h3>${price}</h3>
+                </div>
+                <div className='product-btn'>
+                    <button className='functional-button'>Delete</button>
+                    <button className='functional-button'>Edit</button>
+                </div>
             </div>
         )
     }

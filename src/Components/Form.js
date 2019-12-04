@@ -55,8 +55,11 @@ class Form extends Component {
             <div className='form'> 
                <div className='input-container'>
                    Image URL: <input onChange={e => this.handleImg(e.target.value)}/>
+                   <br/>
                    Product Name: <input onChange={e => this.handleName(e.target.value)}/>
-                   Price: <input onChange={e => this.handlePrice(e.target.value)}/>
+                   <br/>
+                   Price: <input onChange={e => this.handlePrice(e.target.value)} placeholder={this.state.price}/>
+                   <br/>
                </div>
                <div className='button-container'>
                    <button>Cancel</button>
