@@ -24,6 +24,7 @@ class Dashboard extends Component {
                     deleteFn={this.deleteProduct}
                     id={e.product_id}
                     i={e.i}
+                    select={this.props.selectFn}
                 />
             )
         })

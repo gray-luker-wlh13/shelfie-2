@@ -12,7 +12,7 @@ class Product extends Component {
                 </div>
                 <div className='product-btn'>
                     <button className='functional-button' onClick={() => this.props.deleteFn(id)}>Delete</button>
-                    <button className='functional-button'>Edit</button>
+                    <button className='functional-button' onClick={() => this.props.select(this.props.product)}>Edit</button>
                 </div>
             </div>
         )

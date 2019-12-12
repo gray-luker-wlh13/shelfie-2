@@ -11,13 +11,27 @@ class App extends Component {
 
     this.state = {
       inventory: [],
-      i: 0
+      editProduct: {}
     }
   }
 
 //get inventory from database
   componentDidMount(){
     this.getInventory()
+  }
+
+  selectProduct = (i) => {
+    this.setState({
+      editProduct: i
+    })
+  }
+
+  updateProducts = (product_id, body) => {
+    axios.put(`/api/product/${product_id}`, body).then(res => {
+      this.setState({
+        inventory: res.data
+      })
+    })
   }
 
   getInventory = () => {
@@ -36,8 +50,9 @@ class App extends Component {
         <Dashboard 
           inventory={this.state.inventory}
           getFn={this.getInventory}
+          selectFn={this.selectProduct}
         />
-        <Form getFn={this.getInventory} i={this.state.i}/>
+        <Form getFn={this.getInventory} updateFn={this.updateProducts} editProduct={this.state.editProduct}/>
         </div>
       </div>
     );
